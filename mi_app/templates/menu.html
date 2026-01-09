@@ -1,0 +1,17 @@
+{% load static %} 
+<html>
+    <head>
+           <link rel="stylesheet" href="{% static 'mi_app/css/menu.style.css' %}">
+        <title>pagina principal</title>
+    </head>
+    <body>
+        <h1>ingrese la opcion deseada</h1>
+
+       {% csrf_token %}
+       
+      <a href ="{% url 'cita'%}" class="button">crear cita</a>
+      <a href ="{% url 'nuevo_usuario'%}" class="button">agreagar cliente</a>
+
+
+    </body>
+</html>

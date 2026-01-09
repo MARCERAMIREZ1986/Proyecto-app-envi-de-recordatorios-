@@ -1,0 +1,141 @@
+
+
+.punto-infinito{
+    align-self: right;
+    width: 55px;
+    height: 55px;
+    background: #2ecc71;
+    border-radius: 50%;
+    position:absolute;
+    z-index:10;
+    right: 100px;
+    animation:recorrido-giro-parar 6s ease-in-out infinite;
+    
+
+}
+.punto-infinito::after{
+    content:"";
+    position: absolute;
+    width: 55%;
+    height: 55%;
+    border-radius: 50%;
+    background: inherit;
+    opacity: 0.5;
+    z-index: 5;
+    animation:recorrido-giro-parar 6s ease-in-out infinite ;
+    animation-delay: 0.1s;
+}
+.punto-infinito::before{
+       content:"";
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    border: 1px dashed #2b1d15;
+    border-radius: 60px 60px 0 0;
+    transform: rotate(180deg) translate(-50%, -30%);
+    top: 50%;
+    right:  50%;
+    opacity: 0.1;
+}
+@keyframes recorrido-giro-parar{
+    0%{top: 10px; right: 1000px; transform: rotate(0deg);}
+    25%{top: 50px; right: 200px; transform: rotate(90deg);}
+    50%{top: 90px; right: 160px; transform: rotate(180deg);}
+    75%{top: 50px; right: 1100px; transform: rotate(270deg);}
+    100%{top: 50px; right: 470px; transform: rotate(360deg);}
+
+}
+body{
+    
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    height: 100vh;           /* Ocupa el 100% del alto de la ventana */
+    margin: 0;
+    background-color:  #1f0101;
+
+}
+
+
+.login-container button:hover {
+    background-color: #0056b3;}
+
+
+
+
+p{
+    position: relative;
+    width: 100%;
+    padding-right: 80px;
+
+    
+    overflow: hidden;
+    touch-action: pan-up;
+    color: #e4d9d9;
+    font-family: 'Monserrat', sans-serif;
+    text-align: left;
+    text-shadow: 0 0 5px #bdee35,0 0 20px #a78b8b, 0 0 30px #c4c7a2;
+
+}
+
+p{
+    --fontSize: 20px;
+    --lineheight: 50px;
+    width: auto;
+    height: calc(2 * var(--lineheight));
+    line-height: var(--lineheight);
+    margin: calc(15vh - var(--lineheight)) auto 0;
+    font-size: var(--fontSize);
+    text-transform: uppercase;
+
+
+}
+
+h1 {
+    overflow: hidden;
+    touch-action: pan-up;
+    text-align: center;
+    font-family: 'Monserrat', sans-serif;
+    color: #e4d9d9;
+    text-shadow: 0 0 5px #bdee35,0 0 20px #a78b8b, 0 0 30px #c4c7a2;
+
+}
+input{
+    background-color: rgb(219, 206, 206);
+    
+}
+ul {
+    text-align:  left;
+    color: aquamarine;
+}
+marker{
+    align-items: center;
+}
+
+/* Estilos básicos para el botón */
+.mi-boton {
+    
+    background-color: #1f0101; /* Color de fondo verde */
+    color: rgb(47, 215, 221);              /* Color del texto blanco */
+    margin: 50px;
+    padding: 2px 600px;        /* Espacio interno (arriba/abajo, izquierda/derecha) */
+    border: 2px;              /* Quita el borde predeterminado */
+    border-radius: 8px;        /* Esquinas redondeadas */
+    cursor: pointer;           /* Cambia el cursor al pasar por encima */
+    font-size: 10px;           /* Tamaño de la fuente */
+    transition: background-color 0.3s ease; /* Transición suave para hover */
+}
+
+/* Estilo al pasar el ratón (hover) */
+.mi-boton:hover {
+    background-color: #e62c0b; /* Verde un poco más oscuro */
+}
+
+/* Estilo al hacer clic (active) */
+.mi-boton:active {
+    background-color: #3e8e41; /* Verde aún más oscuro */
+}
+
+button{
+    color: #2ecc71;
+}

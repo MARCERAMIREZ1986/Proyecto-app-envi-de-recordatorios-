@@ -1,0 +1,29 @@
+<!-->{% load static %} <-->
+
+
+<html lang="es">
+    <head>
+         <title>crear cita</title>
+          <div class="punto-infinito"></div>
+        <meta charset="UTF8">
+        <meta name="viewport"
+         content="widht=device=widht,initial-scale=1.0"/>
+       <link rel="stylesheet" href="{% static 'mi_app/css/cita.style.css' %}">
+    </head>
+    <body>
+        <h1>agregue la cita </h1>
+        <div class="login-container">
+            <form method="POST">
+              {% csrf_token %}
+         
+               {{ form.as_p }} 
+
+     
+     
+           <button class="mi-boton">gruardar cita</button> 
+    
+            </form>
+         </div>
+    </body>
+
+</html>

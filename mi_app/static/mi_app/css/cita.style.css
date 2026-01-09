@@ -1,0 +1,27 @@
+body {
+    background-color:#ce1010 ;
+}
+h1{
+   text-align: center;
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    height: 80vh;           /* Ocupa el 100% del alto de la ventana */
+    margin: 0;
+    background-color:  #b92222;
+}
+.mi-boton {
+    /* El botón ahora se centrará automáticamente por el padre flex */
+    padding: 10px 30px;
+    background-color: rgb(2, 2, 51);
+    width: 20vh;
+    height: 8vh;
+}
+
+ 

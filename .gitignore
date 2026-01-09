@@ -1,0 +1,27 @@
+#entorno virtual
+venv/
+env/
+Envs/
+
+#base de datos
+db.sqlite3
+
+#archivos temporales
+__pycache__/
+*.pyc 
+
+#variables de entorno coctraseñas
+.env
+
+#archivo de medios imagenes etc
+media/
+
+#carpeta de editores
+.vscode/
+.idea/
+ 
+#archivos estaticos
+staticfiles/
+#archivo del sistema
+.Ds_Store
+Thumbs.db
