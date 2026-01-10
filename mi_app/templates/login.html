@@ -1,17 +1,17 @@
-<¡DOCTYPE html>
+{% load static %} 
+<!DOCTYPE html>
 <head>
    <title> ingreso </title>
 </head>
-<body>
+  <body>
 
 
- {% csrf_token %}
-    
+   {% csrf_token %}
     {{ form.as_p }} 
      
     <button type="submit">Iniciar Sesión</button>
 
 
 
-</body>
+  </body>
 </html>
