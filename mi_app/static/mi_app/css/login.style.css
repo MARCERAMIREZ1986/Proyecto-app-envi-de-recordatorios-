@@ -8,6 +8,8 @@ body {
 }
 
 .login-container {
+
+
     background-color: #460808;
     padding: 30px;
     border-radius: 8px;
@@ -26,6 +28,13 @@ body {
     z-index:10;
     right: 100px;
     animation:recorrido-giro-parar 6s ease-in-out infinite;
+}
+.login-header{
+    text-align: left;
+    margin-bottom: 15px;
+    width: 100%;
+    font-weight: bold;
+    
 }
 .punto-infinito::after{
     content:"";
