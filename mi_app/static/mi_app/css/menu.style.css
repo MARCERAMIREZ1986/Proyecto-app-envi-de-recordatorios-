@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(177, 214, 10);
+    background-color: #350101;
 }
 .button {
     display: table;
@@ -11,7 +11,7 @@ body{
     display: block;
     width: 100%;
     padding: 12px;
-    background-color: #ff00aa;
+    background-color: #eb51b7;
     color: white;
     border: none;
     border-radius: 5px;
