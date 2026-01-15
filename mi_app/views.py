@@ -3,6 +3,8 @@ from .forms import ClienteForm,CitaForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.forms import UserCreationForm
+from django.db.models import Q
+from .models import Cliente
 
 def pagina_inicio(request):
 
@@ -96,7 +98,19 @@ def menu(request):
     return render(request, 'menu.html')
 
 
+#preparando la busqueda de clientes
+def lista_clientes(request):
+    busqueda = request.GET.get('buscar') # Obtenemos lo que el usuario escribió
+    clientes = Cliente.objects.all()
 
+    if busqueda:
+        # Filtramos: que el nombre CONTENGA la búsqueda O el teléfono CONTENGA la búsqueda
+        clientes = clientes.filter(
+            Q(nombre__icontains=busqueda) | 
+            Q(telefono__icontains=busqueda)
+        )
+
+    return render(request, 'lista_clientes.html', {'clientes': clientes})
 
 
 
