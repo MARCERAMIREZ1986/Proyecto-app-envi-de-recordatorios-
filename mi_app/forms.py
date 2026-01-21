@@ -33,6 +33,4 @@ class BuscadorClienteForm(forms.Form):
             'class': 'form-control' # Para que tenga estilo CSS
         })
     ) 
-    class Meta:
-        model = Cita
-        fields = '__all__'
+    

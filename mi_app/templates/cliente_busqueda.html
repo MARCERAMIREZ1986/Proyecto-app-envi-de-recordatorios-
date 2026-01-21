@@ -7,8 +7,18 @@
     <h1>hola </h1>
 
 
-  <!--> {% csrf_token %}<-->
-   <!-->  {{ form.as_p }} <-->
+   {% csrf_token %}
+   {{ form.as_p }}
+  <button type="submit">Iniciar Sesión</button>
+  <div id="lista-clientes">
+    {% for cliente in clientes %}
+        <div class="cliente-item">
+            <strong>{{ cliente.nombre }}</strong> - {{ cliente.telefono }}
+        </div>
+    {% empty %}
+        <p>No se encontraron clientes que coincidan.</p>
+    {% endfor %}
+</div>
 
 
 
