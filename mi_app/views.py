@@ -109,7 +109,7 @@ def cliente_busqueda(request):
         if query:
             # Filtramos por nombre o teléfono
             clientes = clientes.filter(
-                Q(nombre__icontains=query) | Q(telefono__icontains=query)
+                Q(nombre__icontains=query) | Q(apellido__icontains=query) |Q(telefono__icontains=query)
             )
 
     return render(request, 'cliente_busqueda.html', {
