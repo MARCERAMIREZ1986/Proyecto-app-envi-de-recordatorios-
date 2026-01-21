@@ -1,16 +1,13 @@
 {% load static %} 
-<!DOCTYPE html>
-<head>
-   <title> </title>
-</head>
-  <body>
-    <h1>hola </h1>
+<div class="buscador-container">
+    <form method="GET">
+        {{ form.query.label_tag }} {{ form.query }}           <button type="submit">Buscar</button>
+    </form>
+</div>
 
+<hr>
 
-   {% csrf_token %}
-   {{ form.as_p }}
-  <button type="submit">Iniciar Sesión</button>
-  <div id="lista-clientes">
+<div id="lista-clientes">
     {% for cliente in clientes %}
         <div class="cliente-item">
             <strong>{{ cliente.nombre }}</strong> - {{ cliente.telefono }}
@@ -19,9 +16,3 @@
         <p>No se encontraron clientes que coincidan.</p>
     {% endfor %}
 </div>
-
-
-
-
-  </body>
-</html>
