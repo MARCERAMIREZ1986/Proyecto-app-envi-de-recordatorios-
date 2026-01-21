@@ -19,7 +19,20 @@ class CitaForm(forms.ModelForm):
             }
         )
     )
+    class Meta:
+        model = Cita
+        fields = '__all__'
 
+
+class BuscadorClienteForm(forms.Form):
+    query = forms.CharField(
+        label='Buscar Cliente',
+        required=False,
+        widget=forms.TextInput(attrs={
+            'placeholder': 'Nombre o teléfono...',
+            'class': 'form-control' # Para que tenga estilo CSS
+        })
+    ) 
     class Meta:
         model = Cita
         fields = '__all__'

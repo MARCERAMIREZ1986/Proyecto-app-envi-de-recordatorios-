@@ -5,6 +5,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.forms import UserCreationForm
 from django.db.models import Q
 from .models import Cliente
+from .forms import BuscadorClienteForm
 
 def pagina_inicio(request):
 
@@ -96,6 +97,25 @@ def crear_cita(request):
 
 def menu(request):
     return render(request, 'menu.html')
+
+############
+
+def cliente_busqueda(request):
+    form = BuscadorClienteForm(request.GET) # Recibimos los datos por GET
+    clientes = Cliente.objects.all()
+
+    if form.is_valid():
+        query = form.cleaned_data.get('query')
+        if query:
+            # Filtramos por nombre o teléfono
+            clientes = clientes.filter(
+                Q(nombre__icontains=query) | Q(telefono__icontains=query)
+            )
+
+    return render(request, 'cliente_busqueda.html', {
+        'clientes': clientes,
+        'form': form
+    })
 
 
 #preparando la busqueda de clientes

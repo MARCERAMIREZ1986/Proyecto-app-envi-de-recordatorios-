@@ -7,5 +7,6 @@ urlpatterns = [
                path('crear_usuario/',views.registrar_usuario,name='crear_usuario'),
                  path('cita/',views.crear_cita,name='cita'),
                   path('menu/',views.menu,name='menu'),
+                  path('cliente_busqueda/',views.cliente_busqueda,name='cliente_busqueda'),
              
                ]
