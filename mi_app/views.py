@@ -105,17 +105,25 @@ def cliente_busqueda(request):
     clientes = Cliente.objects.all()
 
     if form.is_valid():
-        query = form.cleaned_data.get('query')
-        if query:
-            # Filtramos por nombre o teléfono
-            clientes = clientes.filter(
-                Q(nombre__icontains=query) | Q(apellido__icontains=query) |Q(telefono__icontains=query)
-            )
+        nombre_query = form.cleaned_data.get('nombre')
+        apellido_query = form.cleaned_data.get('apellido')
+        if nombre_query:
+            clientes=clientes.filter(nombre__icontains=nombre_query)
+            if apellido_query:
+                clientes=clientes.filter(apellido__icontains=apellido_query)
+    return render(request,'cliente_busqueda.html',{'form':form,'clientes':clientes})
+            
+                
+                
 
-    return render(request, 'cliente_busqueda.html', {
-        'clientes': clientes,
-        'form': form
-    })
+            #clientes = clientes.filter(
+             #   Q(nombre__icontains=query) | Q(apellido__icontains=query) |Q(telefono__icontains=query)
+           # )
+
+    #return render(request, 'cliente_busqueda.html', {
+     #   'clientes': clientes,
+      #  'form': form
+    #})
 
 
 #preparando la busqueda de clientes

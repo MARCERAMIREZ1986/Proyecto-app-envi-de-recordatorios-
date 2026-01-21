@@ -1,7 +1,8 @@
 {% load static %} 
+<h1>ingrese el nombre del cliente a buscar</h1>
 <div class="buscador-container">
     <form method="GET">
-        {{ form.query.label_tag }} {{ form.query }}           <button type="submit">Buscar</button>
+        {{ form.nombre }} {{ form.apellido }}           <button type="submit">Buscar</button>
     </form>
 </div>
 

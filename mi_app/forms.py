@@ -23,8 +23,11 @@ class CitaForm(forms.ModelForm):
         model = Cita
         fields = '__all__'
 
-
 class BuscadorClienteForm(forms.Form):
+    nombre=forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'nombre'}))
+    apellido=forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':'apellio'}))
+
+''''class BuscadorClienteForm(forms.Form):
     query = forms.CharField(
         label='Buscar Cliente',
         required=False,
@@ -33,4 +36,4 @@ class BuscadorClienteForm(forms.Form):
             'class': 'form-control' # Para que tenga estilo CSS
         })
     ) 
-    
+    '''
