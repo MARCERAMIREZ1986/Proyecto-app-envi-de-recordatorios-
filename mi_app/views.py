@@ -102,14 +102,16 @@ def menu(request):
 
 def cliente_busqueda(request):
     form = BuscadorClienteForm(request.GET) # Recibimos los datos por GET
-    clientes = Cliente.objects.all()
+    clientes = Cliente.objects.none()
 
     if form.is_valid():
         nombre_query = form.cleaned_data.get('nombre')
         apellido_query = form.cleaned_data.get('apellido')
+        if nombre_query or apellido_query:
+                clientes = Cliente.objects.all()
         if nombre_query:
-            clientes=clientes.filter(nombre__icontains=nombre_query)
-            if apellido_query:
+                clientes=clientes.filter(nombre__icontains=nombre_query)
+        if apellido_query:
                 clientes=clientes.filter(apellido__icontains=apellido_query)
     return render(request,'cliente_busqueda.html',{'form':form,'clientes':clientes})
             
