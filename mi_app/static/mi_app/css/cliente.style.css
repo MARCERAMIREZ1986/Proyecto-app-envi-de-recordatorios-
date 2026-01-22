@@ -1,3 +1,87 @@
-body{
-    background-color: #350101;
+.body{
+    color: #2ecc71;
 }
+.cliente-container {
+
+
+    background-color: #460808;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px; /* Limita el ancho máximo para que no se vea gigante */
+    text-align: center;}
+
+    .punto-infinito{
+    align-self: right;
+    width: 55px;
+    height: 55px;
+    background: #2ecc71;
+    border-radius: 50%;
+    position:absolute;
+    z-index:10;
+    right: 100px;
+    animation:recorrido-giro-parar 6s ease-in-out infinite;
+}
+.cliente-header{
+    text-align: left;
+    margin-bottom: 15px;
+    width: 100%;
+    font-weight: bold;
+    
+}
+.punto-infinito::after{
+    content:"";
+    position: absolute;
+    width: 55%;
+    height: 55%;
+    border-radius: 50%;
+    background: inherit;
+    opacity: 0.5;
+    z-index: 5;
+    animation:recorrido-giro-parar 6s ease-in-out infinite ;
+    animation-delay: 0.1s;
+}
+.punto-infinito::before{
+       content:"";
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    border: 1px dashed #2b1d15;
+    border-radius: 60px 60px 0 0;
+    transform: rotate(180deg) translate(-50%, -30%);
+    top: 50%;
+    right:  50%;
+    opacity: 0.1;
+}
+@keyframes recorrido-giro-parar{
+    0%{top: 10px; right: 1000px; transform: rotate(0deg);}
+    25%{top: 50px; right: 200px; transform: rotate(90deg);}
+    50%{top: 90px; right: 160px; transform: rotate(180deg);}
+    75%{top: 50px; right: 1100px; transform: rotate(270deg);}
+    100%{top: 50px; right: 470px; transform: rotate(360deg);}
+
+}
+
+
+/* Estilos para los campos de entrada generados por Django */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Importante para que el padding no desborde el ancho */
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
