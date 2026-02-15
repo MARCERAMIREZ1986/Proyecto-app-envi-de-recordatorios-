@@ -62,3 +62,20 @@ h1{
     background-color:  #ec0606;
 }
 
+.contenedor-busqueda{
+    background-color: #F3F4F6;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    text-align: center;
+}
+.campo-busqueda{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.campo-formulario input{
+    padding: 8px 12px;
+    
+}
