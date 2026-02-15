@@ -1,19 +1,49 @@
-{% load static %} 
+{% load static%} 
 <!DOCTYPE html>
 <html lang="es">
-     <link rel="stylesheet" href="{% static 'mi_app/css/cliente.style.css' %}">
-    <head>
-        <title>ingreso nuevo cliente</title>
-    </head>
+      <head>
+         <title> pap </title>
+         <meta charset="UTF-8">
+         <meta name="viewport"
+          content="width=device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="{% static 'mi_app/css/cliente.style1.css' %}">
+
+  </head>
+    <body>
+         <div class="fondo-izquierdo"></div>
+
+             <div class="fondo-derecho">
+                       
+                      <form class="cliente-form" method="POST">
+                
+      
+                                  {% csrf_token %}
+                                <div class="form-group">
+                                 <label for="nombre" class="form-label">Nombre</label>  
+                                 <input type="text" id="nombre"  name="nombre"  class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                  <label for="apellido" class="form-label">Apellido</label>
+                                   <input type="apellido" id="apellido" name="apellido" class="form-input" required>
+                                </div>
+                                 <div class="form-group">
+                                 <label for="email" class="form-label">Email</label>  
+                                 <input type="text" id="email"  name="email"  class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                  <label for="telefono" class="form-label">Telefono</label>
+                                   <input type="telefono" id="apellido" name="telefono" class="form-input" required>
+                                </div>
+                                   <button type="submit" class="cliente-button">Enviar</button>
+                              </form>
+                   
+                       
+                
+            </div> 
 
 
-    <h1>cliente</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-
-    <button type="submit">agregar cliente</button>
-    </form>
-
+    
+       </form>
+    </body>
 
 </html>

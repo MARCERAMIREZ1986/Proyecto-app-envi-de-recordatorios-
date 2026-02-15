@@ -1,20 +1,32 @@
-{% load static %} 
-<html>
-    <head>
-           <link rel="stylesheet" href="{% static 'mi_app/css/menu.style.css' %}">
-        <title>pagina principal</title>
-    </head>
-    <body>
-        <h1>ingrese la opcion deseada</h1>
 
-       {% csrf_token %}
-       
-      <a href ="{% url 'cita'%}" class="button">crear cita</a>
-      <a href ="{% url 'nuevo_usuario'%}" class="button">agregar cliente</a>
-      <a href ="{% url 'cliente_busqueda'%}" class="button">buscar cliente</a>
-      <a href ="{% url 'cita'%}" class="button">buscar cita</a>
-      <a href ="{% url 'prueba'%}" class="button">salir</a>
+{% load static%}
+<!DOCTYPE html>
+    <html lang="es">
+  <head>
+    <title> op</title>
+        <meta charset="UTF-8">
+       <meta name="viewport"
+        content="width=device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="{% static 'mi_app/css/menu.style1.css' %}">
 
+  </head>
+      <body>
+          <div class="fondo-izquierdo"></div>
 
-    </body>
+             <div class="fondo-derecho">
+                   <div class="contenedor-botones">
+                       <a href ="{% url 'cita'%}" class="button">crear cita</a>
+                   
+                       <a href ="{% url 'nuevo_usuario'%}" class="button">agregar cliente</a>
+                       <a href ="{% url 'cliente_busqueda'%}" class="button">buscar cliente</a>
+                       <a href ="{% url 'cita'%}" class="button">buscar cita</a>
+                       <a href ="{% url 'prueba'%}" class="button">salir</a>
+                   </div>
+            </div> 
+         
+       </body>
 </html>
+
+  
+    
+  

@@ -35,8 +35,19 @@ body {
 
 .login-sidebar {
     width: 30%;
-    background: linear-gradient(to bottom, var(--color-sidebar-degradado-superior), var(--color-sidebar-degradado-inferior));
+    
+    background: linear-gradient(to bottom,
+     var(--color-sidebar-degradado-superior),
+    var(--color-sidebar-degradado-inferior)),
+    url('../../imagen/imagen-sidebar.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat;
+
+    background-blend-mode: overlay;
+
 }
+
 
 .login-content {
     width: 70%;
@@ -111,4 +122,21 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+.cita-button{
+     padding: 0.8rem;
+    background-color: var(--color-boton);
+    color: #FFFFFF;
+    border: none;
+    border-radius: var(--radio-boton);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0.5rem;
+
+}
+.cita-button:hover {
+    background-color: var(--color-boton-hover);
 }
