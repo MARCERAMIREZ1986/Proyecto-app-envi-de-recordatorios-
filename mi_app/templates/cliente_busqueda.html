@@ -1,20 +1,53 @@
 {% load static %} 
-<h1>ingrese el nombre del cliente a buscar</h1>
-<div class="buscador-container">
-    <form method="GET">
-        {{ form.nombre }} {{ form.apellido }}           <button type="submit">Buscar</button>
-          <a href ="{% url 'menu'%}" class="button">back</a>
-    </form>
-</div>
+<!DOCTYPE html>
+    <html lang="es">
+  <head>
+    <title> op</title>
+        <meta charset="UTF-8">
+       <meta name="viewport"
+        content="width=device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="{% static 'mi_app/css/busquedacliente.style.css' %}">
 
-<hr>
+  </head>
+         <body>
+                <div class="fondo-izquierdo"></div>
 
-<div id="lista-clientes">
-    {% for cliente in clientes %}
-        <div class="cliente-item">
-            <strong>{{ cliente.nombre }}</strong> - {{ cliente.telefono }}
-        </div>
-    {% empty %}
-        <p>No se encontraron clientes que coincidan.</p>
-    {% endfor %}
-</div> 
+                <div class="fondo-derecho">
+                     <div class="buscador-container">
+                        <h1>ingrese el nombre del cliente a buscar</h1>
+                           <form method="GET" class="form-busqueda">
+                          
+                                <div class="campos-busqueda">
+                                   <div class="campo-formulario"> 
+                                       <input type="text" name="nombre" placeholder="Nombre" required>
+                                   </div>
+                                   <div class="campo-formulario">
+                                    <input type="text" name="nombre" placeholder="Nombre" required>
+                                   </div>
+                                </div>
+                                <div class="botones-accion">   
+                                 <button type="submit" class="button">Buscar</button>
+                               <a href ="{% url 'menu'%}" class="button">back</a>
+                                </div>
+                             </form>
+                     </div>
+                      {%if mensaje%}
+                      <p class="mensaje-resultado">{{mensaje}}</p>
+                      {%endif%}
+
+                     <div id="lista-clientes">
+                            {% for cliente in clientes %}
+                           <div class="cliente-item">
+                             <strong>{{ cliente.nombre }}</strong> - {{ cliente.telefono }}
+                          </div>
+                                         {% empty %}
+                                 <p>No se encontraron clientes que coincidan.</p>
+                                  {% endfor %}
+                     </div>
+                 </div> 
+            </body>
+            
+            
+</html>
+
+
