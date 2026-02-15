@@ -1,27 +1,27 @@
+
 body {
-    background-color:#ce1010 ;
-}
-h1{
-   text-align: center;
-}
-
-
-
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;     /* Centra verticalmente */
-    height: 80vh;           /* Ocupa el 100% del alto de la ventana */
     margin: 0;
-    background-color:  #b92222;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #F3F4F6;
+    display: flex;
+
 }
-.mi-boton {
-    /* El botón ahora se centrará automáticamente por el padre flex */
-    padding: 10px 30px;
-    background-color: rgb(2, 2, 51);
-    width: 20vh;
-    height: 8vh;
+
+
+
+
+.fondo-izquierdo{
+   width: 30%;
+   background: linear-gradient(to bottom right, #8c8f96,#cac2bb);
+
+}
+
+.fondo-derecho{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
  

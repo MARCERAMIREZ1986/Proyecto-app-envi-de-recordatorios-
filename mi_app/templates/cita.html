@@ -1,31 +1,51 @@
-{% extends 'principal.html'%}
+{% load static%} 
+<!DOCTYPE html>
+<html lang="es">
+      <head>
+         <title> pip </title>
+         <meta charset="UTF-8">
+         <meta name="viewport"
+          content="width=device-width,initial-scale=1.0"/>
+          <link rel="stylesheet" href="{% static 'mi_app/css/cita.style1.css' %}">
 
-{% block title %} Crear cita {% endblock %}
-          
-{% block styles %}
-   <style>
-        .login-container{
-            widht:70%;
-            margin:0 auto;
-            padding:2rem;
-        }
-</style>
-{% endblock %}
-{% block content %}
-<div class="login-sidebar">
-</div>
-<div class="login-content">
-    <div class="login-card">
-        <h1 class="login-title">Agregar Cita</h1>
-        <form method="POST">
-              {% csrf_token %}
-         
-               {{ form.as_p }} 
-          <button class="login-btn">Gruardar Cita</button> 
-    
-        </form>
-    </div>
-</div>
-  {% endblock %}
+      </head>
+         <body>
+            <div class="fondo-izquierdo"></div>
 
+                <div class="fondo-derecho">
+                         
+                    <div class="contenedor-form">
+                              <h2>Crear cita</h2>
+                        <form methoid="POST">
+                                     {% csrf_token %}
+                            <div class="campo-form">
+                                    <label>Cliente:</label>
+                                       {{form.cliente}}
+                                   {%if form.cliente.errors%}
+                                  <p class="error-mensaje">{{form.cliente.errrs.0}}</p>
+                                      {% endif %}
+                            </div>
+                            <div class="campo-form">
+                                <label>Fecha Cita:</label>
+                                <input type="datetime-local" name="fecha_cita" class="campo-fecha" lang="es" required>
+                                <p class="error-mensaje"> This field is required</p>
+                            </div>
+                             <div class="campo-form">
+                                      <label>Motivo:</label>
+                                        {{form.motivo}}
+                                     {%if form.motivo.errors%}
+                                   <p class="error-mensaje">{{form.motivo.errors.0}}</p>
+                                           {%endif%}
+                             </div>
+                            <a href ="{% url 'prueba'%}" class="button">salir</a>
+                            <button href ="{% url 'prueba'%}" class="cita-button">Enviar</button>
                         
+                     
+                    </div>
+             </div>
+                        
+           
+         </body>
+     
+     
+</html>

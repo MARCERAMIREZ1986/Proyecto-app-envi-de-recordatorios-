@@ -1,0 +1,117 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #F3F4F6;
+    display: flex;
+
+}
+
+
+
+
+.fondo-izquierdo{
+   width: 30%;
+   background: linear-gradient(to bottom right, #8c8f96,#cac2bb);
+
+}
+
+.fondo-derecho{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contenedor-form{
+    background-color: #F3F4F6;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow:0 4px 8px rgba(0,0,0,0,1);
+    width: 380px;
+}
+.contenedor-form h1{
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 24px;
+
+}
+.campo-form{
+    margin-bottom: 18px;
+}
+
+.campo-form label{
+    display: block;
+    margin-bottom: 6px;
+    color: #555;
+    font-size: 14px;
+}
+.campo-form input,
+.campo-form select{
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #b6b5f8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition:border-color 0.3s ease;
+}
+
+.campo-form input:focus,
+.campo-form select:focus{
+    outline: none;
+    border-color: #0066ff;
+    box-shadow: 0 0 0 2px rgba(o, 102, 255, 0.1);
+
+}
+
+.error-mensaje{
+    margin: 5px 0 0 0;
+    padding: 0;
+    color: #dc3545;
+    font-size: 12px;
+    list-style-type:disc;
+    margin-left: 15px;
+}
+
+.campo-fecha{
+    width: 100px;
+    padding: 9px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #555;
+    background-color: #F3F4F6;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator{
+    filter: invert(0.3);
+    cursor: pointer;
+}
+.cita-button{
+
+    
+    padding: 0.8rem;
+    background-color: #1E40AF;
+    text-align: center;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: large;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0.5rem;
+    width: 200px;
+
+
+}
+
+.cita-button:hover {
+    background-color:  #ec0606;
+}
+
